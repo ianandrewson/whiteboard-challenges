@@ -20,6 +20,10 @@ class Set {
     }
   }
 
+  isIn(arg) {
+    this.array.includes(arg) ? true : false;
+  }
+
   [Symbol.iterator]() {
     return this.array[Symbol.iterator]();
   }

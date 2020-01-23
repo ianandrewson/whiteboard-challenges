@@ -29,13 +29,13 @@ describe('Set tests', () => {
     expect(() => set1.add(2)).toThrowError('Item already in set');
   });
 
-  it.only('can remove an item from the set', () => {
+  it('can remove an item from the set', () => {
     set1.remove(5);
     expect([...set1]).toEqual([1, 2, 3, 4]);
     expect(() => set1.remove(9)).toThrowError('Item not in set');
   });
 
-  it('can check if an item is in the set', () => {
+  it.only('can check if an item is in the set', () => {
     expect(set1.isIn(2)).toBeTruthy;
     expect(set1.isIn(9)).toBeFalsy;
   });
