@@ -1,11 +1,20 @@
-const Class = require('./Set.js');
+const Set = require('./Set.js');
 
 describe('Set tests', () => {
   let set1;
   let set2;
   beforeAll(() => {
-    set1 = new Set(1, 2, 3, 4, 5);
-    set2 = new Set(4, 5, 6, 7);
+    set1 = new Set();
+    set1.add(1);
+    set1.add(2);
+    set1.add(3);
+    set1.add(4);
+    set1.add(5);
+    set2 = new Set();
+    set2.add(4);
+    set2.add(5);
+    set2.add(6);
+    set2.add(7);
   });
 
   it('can intantiate a new object of class Set', () => {
@@ -14,14 +23,15 @@ describe('Set tests', () => {
   });
 
   it('can add an item to the set', () => {
+    expect([...set1]).toEqual([1, 2, 3, 4, 5]);
     set1.add(6);
-    expect(set1).toContainEqual([1, 2, 3, 4, 5, 6]);
-    expect(set1.add(2)).toThrowError('Item already in set');
+    expect([...set1]).toEqual([1, 2, 3, 4, 5, 6]);
+    expect(() => set1.add(2)).toThrowError('Item already in set');
   });
 
   it('can remove an item from the set', () => {
     set1.remove(5);
-    expect(set1).toContainEqual([1, 2, 3, 4, 4]);
+    expect([...set1]).toContainEqual([1, 2, 3, 4, 4]);
     expect(set1.remove(9)).toThrowError('Item not in set');
   });
 
