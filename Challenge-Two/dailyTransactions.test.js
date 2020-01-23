@@ -1,5 +1,5 @@
 const { revenue, getFormattedDate } = require('./dailyTransactions.js');
-const { expectation, transactions } = require('./dailyTransactions');
+const { expectation, transactions } = require('./data.js');
 
 describe('daily transactions test', () => {
   it('can get the correctly formatted date', () => {
@@ -15,7 +15,7 @@ describe('daily transactions test', () => {
     const transaction4 = { price: 100, timestamp: 4 };
     const transactionSample = [transaction1, transaction2, transaction3, transaction4];
     
-    expect(revenue(transactionSample)).toEqual({ 'Tue Oct 15 2019': 12, 'kasdfj': 100 });
+    expect(revenue(transactionSample)).toEqual({ 'Tue Oct 15 2019': 12, 'Thu Jan 01 1970': 100 });
   });
 
   it('can output the revenue given an array of transactions', () => {
