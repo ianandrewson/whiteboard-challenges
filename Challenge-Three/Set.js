@@ -64,6 +64,16 @@ class Set {
     return this.array[Symbol.iterator]();
   }
 
+  static intersection(set1, set2) {
+    const result = new Set();
+    set1.array.forEach(item => {
+      if(set2.array.includes(item)) {
+        result.add(item);
+      }
+    });
+    return result;
+  }
+
   //toString() {
   //   return this.array.toString();
   // }
