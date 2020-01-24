@@ -3,7 +3,7 @@ const Set = require('./Set.js');
 describe('Set tests', () => {
   let set1;
   let set2;
-  beforeAll(() => {
+  beforeEach(() => {
     set1 = new Set();
     set1.add(1);
     set1.add(2);
@@ -60,13 +60,13 @@ describe('Set tests', () => {
     expect([...result]).toEqual([4, 5]);
   });
 
-  it.only('has a static method .union(S1, S2) that returns the union of the two sets', () => {
+  it('has a static method .union(S1, S2) that returns the union of the two sets', () => {
     const result = Set.union(set1, set2);
     expect([...result]).toEqual([1, 2, 3, 4, 5, 6, 7]);
   });
 
   it('has a static method .difference(S1, S2) that returns the difference of the two sets', () => {
     const result = Set.difference(set1, set2);
-    expect(result).toContainEqual([1, 2, 3, 6, 7]);
+    expect([...result]).toEqual([1, 2, 3, 6, 7]);
   });
 });

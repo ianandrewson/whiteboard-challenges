@@ -87,7 +87,20 @@ class Set {
     return result;
   }
 
-
+  static difference(set1, set2){
+    const result = new Set();
+    set1.array.forEach(item => {
+      if(!set2.array.includes(item)){
+        result.add(item);
+      }
+    });
+    set2.array.forEach(item => {
+      if(!set1.array.includes(item)){
+        result.add(item);
+      }
+    });
+    return result;
+  } 
 
   //toString() {
   //   return this.array.toString();
