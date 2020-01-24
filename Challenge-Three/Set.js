@@ -24,6 +24,17 @@ class Set {
     this.array.includes(arg) ? true : false;
   }
 
+  intersection(set) {
+    const result = new Set();
+    [...set].forEach(item => {
+      if(this.array.includes(item)) {
+        result.add(item);
+        console.log(result);
+      }
+    });
+    return result;
+  }
+
   [Symbol.iterator]() {
     return this.array[Symbol.iterator]();
   }

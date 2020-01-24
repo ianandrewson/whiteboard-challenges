@@ -35,14 +35,14 @@ describe('Set tests', () => {
     expect(() => set1.remove(9)).toThrowError('Item not in set');
   });
 
-  it.only('can check if an item is in the set', () => {
+  it('can check if an item is in the set', () => {
     expect(set1.isIn(2)).toBeTruthy;
     expect(set1.isIn(9)).toBeFalsy;
   });
 
-  it('can use instance method .intersection(otherSet) to return a new set with the intersection', () => {
+  it.only('can use instance method .intersection(otherSet) to return a new set with the intersection', () => {
     const result = set1.intersection(set2);
-    expect(result).toContainEqual([4, 5]);
+    expect([...result]).toEqual([4, 5]);
   });
 
   it('can use instance method .union(otherSet) to return a new set with the union of the two', () => {
