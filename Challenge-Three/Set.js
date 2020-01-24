@@ -45,6 +45,21 @@ class Set {
     return result;
   }
 
+  difference(set) {
+    const result = new Set();
+    this.array.forEach(item => {
+      if(!set.array.includes(item)) {
+        result.add(item);
+      }
+    });
+    [...set].forEach(item => {
+      if(!this.array.includes(item)) {
+        result.add(item);
+      }
+    });
+    return result;
+  }
+
   [Symbol.iterator]() {
     return this.array[Symbol.iterator]();
   }

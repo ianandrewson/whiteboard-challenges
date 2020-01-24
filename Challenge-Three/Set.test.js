@@ -45,17 +45,17 @@ describe('Set tests', () => {
     expect([...result]).toEqual([4, 5]);
   });
 
-  it.only('can use instance method .union(otherSet) to return a new set with the union of the two', () => {
+  it('can use instance method .union(otherSet) to return a new set with the union of the two', () => {
     const result = set1.union(set2);
     expect([...result]).toEqual([1, 2, 3, 4, 5, 6, 7]);
   });
 
   it('can use instance method .difference(otherSet) to return a set with difference between the two', () => {
     const result = set1.difference(set2);
-    expect(result).toContainEqual([1, 2, 3, 6, 7]);
+    expect([...result]).toEqual([1, 2, 3, 6, 7]);
   });
 
-  it('has a static method .intersection(S1, S2) that takes two sets and returns the intersection of the two', () => {
+  it.only('has a static method .intersection(S1, S2) that takes two sets and returns the intersection of the two', () => {
     const result = Set.intersection(set1, set2);
     expect(result).toEqual([3, 4]);
   });
