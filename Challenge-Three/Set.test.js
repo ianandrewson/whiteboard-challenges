@@ -40,14 +40,14 @@ describe('Set tests', () => {
     expect(set1.isIn(9)).toBeFalsy;
   });
 
-  it.only('can use instance method .intersection(otherSet) to return a new set with the intersection', () => {
+  it('can use instance method .intersection(otherSet) to return a new set with the intersection', () => {
     const result = set1.intersection(set2);
     expect([...result]).toEqual([4, 5]);
   });
 
-  it('can use instance method .union(otherSet) to return a new set with the union of the two', () => {
+  it.only('can use instance method .union(otherSet) to return a new set with the union of the two', () => {
     const result = set1.union(set2);
-    expect(result).toContainEqual([1, 2, 3, 4, 5, 6, 7]);
+    expect([...result]).toEqual([1, 2, 3, 4, 5, 6, 7]);
   });
 
   it('can use instance method .difference(otherSet) to return a set with difference between the two', () => {

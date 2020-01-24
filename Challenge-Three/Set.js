@@ -29,9 +29,19 @@ class Set {
     [...set].forEach(item => {
       if(this.array.includes(item)) {
         result.add(item);
-        console.log(result);
       }
     });
+    return result;
+  }
+
+  union(set) {
+    const result = new Set();
+    this.array.forEach(item => result.add(item));
+    [...set].forEach(item => {
+      if(!result.array.includes(item)) {
+        result.add(item);
+      }
+    }); 
     return result;
   }
 
