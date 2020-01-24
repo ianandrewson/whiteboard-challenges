@@ -55,14 +55,14 @@ describe('Set tests', () => {
     expect([...result]).toEqual([1, 2, 3, 6, 7]);
   });
 
-  it.only('has a static method .intersection(S1, S2) that takes two sets and returns the intersection of the two', () => {
+  it('has a static method .intersection(S1, S2) that takes two sets and returns the intersection of the two', () => {
     const result = Set.intersection(set1, set2);
     expect([...result]).toEqual([4, 5]);
   });
 
-  it('has a static method .union(S1, S2) that returns the union of the two sets', () => {
+  it.only('has a static method .union(S1, S2) that returns the union of the two sets', () => {
     const result = Set.union(set1, set2);
-    expect([...result]).toContainEqual([1, 2, 3, 4, 5, 6, 7]);
+    expect([...result]).toEqual([1, 2, 3, 4, 5, 6, 7]);
   });
 
   it('has a static method .difference(S1, S2) that returns the difference of the two sets', () => {
